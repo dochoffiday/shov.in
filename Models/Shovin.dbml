@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ShovinDB" EntityNamespace="Shovin.DB" ContextNamespace="Shovin.DB" Class="ShovinDataContext" Serialization="Unidirectional" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\ShovinDB.mdf;Integrated Security=True;User Instance=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ShovinDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Shove" Member="Shoves">
+    <Type Name="Shove">
+      <Column Name="ShoveID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TinyUrl" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="FullUrl" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Keyword" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="AdDiplayMilliseconds" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Shove_Visit" Member="Visits" AccessModifier="Internal" ThisKey="ShoveID" OtherKey="ShoveID" Type="Visit" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Visit" Member="Visits">
+    <Type Name="Visit">
+      <Column Name="VisitID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ShoveID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ReferrerUrl" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Association Name="Shove_Visit" Member="Shove" AccessModifier="Internal" ThisKey="ShoveID" OtherKey="ShoveID" Type="Shove" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,30 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.1/build/reset/reset-min.css" />
+    <link type="text/css" rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/themes/ui-darkness/jquery-ui.css" />
+    <link href="site.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js"></script>
+</head>
+
+<body>
+    <div id="page">
+        <div id="header">
+            <h4>HR Shov.in Stuff</h4>
+        </div>
+
+        <div id="main" class="ui-corner-all">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </div>
+        
+        <div id="bookmark">
+            <a href="javascript:void(location.href='<%= ViewData["ServiceUrl"] %>?url='+escape(location.href))">Shov.in</a> -> drag to bookmark toolbar
+        </div>
+    </div>
+</body>
+</html>

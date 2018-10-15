@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Shovin">
+  <DataContextMoniker Name="/ShovinDataContext" />
+  <nestedChildShapes>
+    <classShape Id="c9bde644-6f6a-4261-81a3-8f8080eabd54" absoluteBounds="3.25, 2, 2, 1.9178898111979166">
+      <DataClassMoniker Name="/ShovinDataContext/Shove" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0f04dbbd-3eb9-4bc8-a654-ea53db77928e" absoluteBounds="3.2649999999999997, 2.46, 1.9700000000000002, 1.3578898111979165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9007fa88-8713-43e4-8992-0963537e14e1" absoluteBounds="7.25, 2.5, 2, 1.5891951497395831">
+      <DataClassMoniker Name="/ShovinDataContext/Visit" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9fde8012-3ec8-45f5-98cf-fa311f2a71f6" absoluteBounds="7.265, 2.96, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.25 : 3.20894490559896); (7.25 : 3.20894490559896)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ShovinDataContext/Shove/Shove_Visit" />
+      <nodes>
+        <classShapeMoniker Id="c9bde644-6f6a-4261-81a3-8f8080eabd54" />
+        <classShapeMoniker Id="9007fa88-8713-43e4-8992-0963537e14e1" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
